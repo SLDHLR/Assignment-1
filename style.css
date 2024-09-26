@@ -1,13 +1,12 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
-
+/* General Styles */
 body, html, #app {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    min-height: 100vh;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
 }
 
 #app {
@@ -15,13 +14,14 @@ body, html, #app {
 }
 
 #app canvas {
-    display: block;
-    position: fixed;
-    z-index: -1;
-    top: 0;
+  display: block;
+  position: fixed;
+  z-index: -1;
+  top: 0;
 }
+
 .logo {
-  width: 80%;
+  width: 90%;
   height: 90%;
   border: 2px solid #625d5d;
   display: flex;
@@ -32,10 +32,7 @@ body, html, #app {
   background: transparent;
 }
 
-
-
-/*-----------------------------------------------*/
-
+/* Wrapper and Container */
 .wrapper {
   width: 100%;
   height: 100vh;
@@ -49,8 +46,10 @@ body, html, #app {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
+  transition: all 0.3s ease;
 }
 
+/* Card Styles */
 .card {
   width: 80px;
   border-radius: .75rem;
@@ -98,25 +97,31 @@ body, html, #app {
 .description p {
   color: #2a2a30;
   padding-top: 5px;
+  margin-top: 0px;
 }
 
-.description h4 {
+.description h3 {
   text-transform: uppercase;
+  margin-bottom: 0px;
 }
 
+/* Hide input */
 input {
   display: none;
 }
 
+/* Expand card when checked */
 input:checked + label {
   width: 600px;
 }
 
+/* Show description on checked */
 input:checked + label .description {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 
+/* Specific card images */
 .card[for="c1"] {
   background-image: url('.//img/Ford_Mustang_Dark_Horse.jpg');
 }
@@ -128,4 +133,41 @@ input:checked + label .description {
 }
 .card[for="c4"] {
   background-image: url('.//img/Audi_A8_50_TDI.jpg');
+}
+.card[for="c5"] {
+  background-image: url('.//img/Lamborghini_Aventador_SV.jpg');
+}
+
+/* Responsive Design: Small Screens */
+@media (max-width: 768px) {
+  .container {
+      flex-wrap: wrap;
+      height: auto;
+  }
+
+  .card {
+      width: 45%; /* Cards will take 45% of the width on small screens */
+      margin: 10px;
+      height: auto;
+  }
+
+  input:checked + label {
+      width: 90%; /* Expand card on smaller screens */
+  }
+
+  .card > .row > .description {
+      width: 100%;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .card {
+      width: 90%;
+      margin: 10px 0;
+  }
 }

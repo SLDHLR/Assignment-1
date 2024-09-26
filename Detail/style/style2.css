@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    padding: auto;
+    background-color: rgb(101, 185, 185);
+}
+.head{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    background-color: rgb(101, 185, 185);
+    
+}
+h1 {
+    margin: 0;
+}
+
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: rgb(101, 185, 185);
+    margin-left: 20px;
+}
+.para{
+    background-color: rgb(101, 185, 185);
+    
+}
